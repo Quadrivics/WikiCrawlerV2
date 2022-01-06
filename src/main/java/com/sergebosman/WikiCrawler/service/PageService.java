@@ -18,9 +18,9 @@ public class PageService {
         this.pageRepository = pageRepository;
     }
 
-    public Page addPage(Page employee) {
-        employee.setPageCode(UUID.randomUUID().toString());
-        return pageRepository.save(employee);
+    public Page addPage(Page page) {
+        page.setPageCode(UUID.randomUUID().toString());
+        return pageRepository.save(page);
     }
 
     public List<Page> findAllPages() {

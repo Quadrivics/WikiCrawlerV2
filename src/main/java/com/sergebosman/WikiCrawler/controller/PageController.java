@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RequestMapping("/page")
 public class PageController {
     private final PageService pageService;

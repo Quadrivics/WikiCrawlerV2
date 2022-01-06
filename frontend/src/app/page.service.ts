@@ -7,7 +7,7 @@ import { Page } from './page';
   providedIn: 'root'
 })
 export class PageService {
-private apiServerUrl = '';
+private apiServerUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
@@ -23,7 +23,7 @@ private apiServerUrl = '';
     return this.http.put<Page>(`${this.apiServerUrl}/page/update`, page);
   }
 
-  public updatePage(pageId: number): Observable<void> {
-      return this.http.delete<Page>(`${this.apiServerUrl}/page/delete/${pageId}`);
+  public deletePage(pageId: number): Observable<void> {
+      return this.http.delete<void>(`${this.apiServerUrl}/page/delete/${pageId}`);
     }
 }
